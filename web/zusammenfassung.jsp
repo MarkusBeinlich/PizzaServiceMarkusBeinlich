@@ -60,17 +60,10 @@ ansonnsten mit der JavaAnweisungen an den SessionScope unter der Bedingung angel
         <%   if (orderPizza.getOrder().getOrderEntries().size() != 0) {
                 out.print("<br/>" + "Summe: " + invoice.getInvoiceAmount());
                 out.print("<br/>" + "<br/>" + "IP-Adresse: " + orderPizza.getIpAddress() + " Session: " + orderPizza.getSessionId());
-                                Set<String> hitCounter = (HashSet)application.getAttribute("hitCounter");
-                if (hitCounter == null) {
-                    hitCounter = new HashSet<String>();
-                }
-                hitCounter.add(orderPizza.getSessionId());
-                application.setAttribute("hitCounter", hitCounter);
-                out.print("Visits: " + ((Set)application.getAttribute("hitCounter")).size());
             }%> 
-            <br/>
-            <a href="generate/myPdf.pdf" > zur pdf Bestellung</a> <br/>
-            <a href="<%=request.getContextPath()%>/menu.jsp">Bestellen</a>
-            <h2>Guten Appetit</h2>
+        <br/>
+        <a href="generate/myPdf.pdf" > zur pdf Bestellung</a> <br/>
+        <a href="<%=request.getContextPath()%>/menu.jsp">Bestellen</a>
+        <h2>Guten Appetit</h2>
     </body>
 </html>

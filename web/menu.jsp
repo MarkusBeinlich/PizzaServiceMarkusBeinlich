@@ -65,13 +65,6 @@
 
         <%
                 out.print("<br/>" + "<br/>" + "IP-Adresse: " + orderPizza.getIpAddress() + " Session: " + orderPizza.getSessionId());
-                Set<String> hitCounter = (HashSet)application.getAttribute("hitCounter");
-                if (hitCounter == null) {
-                    hitCounter = new HashSet<String>();
-                }
-                hitCounter.add(orderPizza.getSessionId());
-                application.setAttribute("hitCounter", hitCounter);
-                out.print("Visits: " + ((Set)application.getAttribute("hitCounter")).size());
             }%>
     </body>
 </html>
